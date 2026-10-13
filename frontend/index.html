@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f2c">
+  <title>AgriSahay - Farmer support, made clearer</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="AgriSahay home">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span>AgriSahay</span>
+    </a>
+    <label class="language-picker">
+      <span data-i18n="language">Language</span>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="ta">தமிழ்</option>
+        <option value="tanglish">Tanglish</option>
+      </select>
+    </label>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">YOUR FARM. YOUR NEXT STEP.</p>
+        <h1 data-i18n="heroTitle">The right support starts with knowing where you stand.</h1>
+        <p class="hero-description" data-i18n="heroDescription">Explore scheme leads that fit your farm, understand what to check, and get practical next steps—in a language that feels familiar.</p>
+        <a class="text-link" href="#profile" data-i18n="startLink">Find support for my farm <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="hill hill-back"></div>
+        <div class="hill hill-front"></div>
+        <div class="sprout">✳</div>
+        <div class="hero-note"><span class="note-check">✓</span><span data-i18n="heroNote">Personal guidance, not a government decision</span></div>
+      </div>
+    </section>
+
+    <div class="notice" role="note">
+      <span class="notice-icon" aria-hidden="true">i</span>
+      <p data-i18n="notice">AgriSahay offers guidance only. Scheme information in this starter catalog is not verified; confirm current eligibility, documents, and application dates with the linked department.</p>
+    </div>
+
+    <section class="section-heading" id="profile">
+      <div>
+        <p class="eyebrow" data-i18n="stepOne">01 — YOUR FARM PROFILE</p>
+        <h2 data-i18n="profileTitle">Let’s understand your needs</h2>
+        <p data-i18n="profileDescription">A few details help us sort relevant scheme information. Share only what you are comfortable sharing.</p>
+      </div>
+      <span class="step-chip" data-i18n="noAccount">No account needed</span>
+    </section>
+
+    <section class="profile-layout">
+      <form id="profile-form" class="card profile-form">
+        <div class="form-grid">
+          <label>
+            <span data-i18n="state">State</span>
+            <select name="state">
+              <option value="" data-i18n="statePlaceholder">Select state</option>
+              <option>Tamil Nadu</option>
+              <option>Andhra Pradesh</option>
+              <option>Karnataka</option>
+              <option>Kerala</option>
+              <option>Maharashtra</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="district">District</span>
+            <input name="district" maxlength="80" placeholder="e.g. Madurai">
+          </label>
+          <label>
+            <span data-i18n="landArea">Land area (acres)</span>
+            <input name="land_area_acres" type="number" min="0" max="100000" step="0.01" placeholder="e.g. 2">
+          </label>
+          <label>
+            <span data-i18n="ownership">Land ownership</span>
+            <select name="ownership">
+              <option value="unknown" data-i18n="preferNotToSay">Prefer not to say</option>
+              <option value="owned" data-i18n="owned">Owned</option>
+              <option value="leased" data-i18n="leased">Leased</option>
+              <option value="shared" data-i18n="shared">Shared</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="crop">Main crop</span>
+            <input name="crop" maxlength="80" placeholder="e.g. Paddy / நெல்">
+          </label>
+          <label>
+            <span data-i18n="farmerCategory">Farmer category (optional)</span>
+            <input name="farmer_category" maxlength="80" placeholder="e.g. Small / marginal">
+          </label>
+          <label>
+            <span data-i18n="irrigation">Irrigation (optional)</span>
+            <input name="irrigation" maxlength="80" placeholder="e.g. Drip / borewell">
+          </label>
+          <label>
+            <span data-i18n="supportNeed">What support are you looking for?</span>
+            <select name="need">
+              <option value="any" data-i18n="anySupport">Show all support types</option>
+              <option value="income-support" data-i18n="incomeSupport">Income support</option>
+              <option value="crop-insurance" data-i18n="cropInsurance">Crop insurance</option>
+              <option value="irrigation" data-i18n="irrigationSupport">Irrigation / water</option>
+              <option value="solar-energy" data-i18n="solarSupport">Solar energy</option>
+            </select>
+          </label>
+        </div>
+        <button class="button button-primary" type="submit" data-i18n="findSchemes">Show scheme leads <span aria-hidden="true">→</span></button>
+        <p class="form-footnote" data-i18n="localOnly">Your profile is processed by this app and is not saved.</p>
+      </form>
+
+      <aside class="how-card">
+        <p class="eyebrow" data-i18n="howItWorks">HOW IT WORKS</p>
+        <div class="how-step"><span>1</span><p data-i18n="howOne">Share a few details about your farm</p></div>
+        <div class="how-step"><span>2</span><p data-i18n="howTwo">See relevant scheme leads and what needs checking</p></div>
+        <div class="how-step"><span>3</span><p data-i18n="howThree">Confirm details with the official department</p></div>
+        <div class="how-divider"></div>
+        <p class="small-note" data-i18n="privacyNote">No Aadhaar, bank details, or document uploads are requested here.</p>
+      </aside>
+    </section>
+
+    <section id="results" class="results-section" aria-live="polite"></section>
+
+    <section class="tools-section">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow" data-i18n="stepTwo">02 — ASK & EXPLORE</p>
+          <h2 data-i18n="toolsTitle">A little more help, when you need it</h2>
+          <p data-i18n="toolsDescription">Ask a question in English, Tamil, or Tanglish—or explore a data-based crop suggestion.</p>
+        </div>
+      </div>
+      <div class="tools-grid">
+        <form class="card tool-card" id="assistant-form">
+          <div class="tool-icon assistant-icon" aria-hidden="true">✳</div>
+          <h3 data-i18n="assistantTitle">Ask AgriSahay</h3>
+          <p data-i18n="assistantDescription">Try: “Enakku 2 acre land irukku, paddy poduren. Enna support?”</p>
+          <label>
+            <span data-i18n="yourQuestion">Your question</span>
+            <textarea name="message" rows="3" maxlength="2000" required placeholder="Type your question..."></textarea>
+          </label>
+          <button class="button button-outline" type="submit" data-i18n="askButton">Find relevant leads <span aria-hidden="true">→</span></button>
+          <div id="assistant-result" class="tool-result" aria-live="polite"></div>
+          <p class="form-footnote" data-i18n="assistantLimit">Keyword-based helper; it does not call an external AI service.</p>
+        </form>
+
+        <form class="card tool-card crop-card" id="crop-form">
+          <div class="tool-icon crop-icon" aria-hidden="true">↗</div>
+          <h3 data-i18n="cropTitle">Explore crop suggestions</h3>
+          <p data-i18n="cropDescription">Enter soil nutrients and weather values to compare with the included dataset.</p>
+          <div class="crop-grid">
+            <label><span>N</span><input name="N" type="number" step="any" required placeholder="Nitrogen"></label>
+            <label><span>P</span><input name="P" type="number" step="any" required placeholder="Phosphorus"></label>
+            <label><span>K</span><input name="K" type="number" step="any" required placeholder="Potassium"></label>
+            <label><span data-i18n="temperature">Temperature °C</span><input name="temperature" type="number" step="any" required placeholder="e.g. 25"></label>
+            <label><span data-i18n="humidity">Humidity %</span><input name="humidity" type="number" step="any" required placeholder="e.g. 70"></label>
+            <label><span>pH</span><input name="ph" type="number" step="any" required placeholder="e.g. 6.5"></label>
+            <label class="full-width"><span data-i18n="rainfall">Rainfall mm</span><input name="rainfall" type="number" step="any" required placeholder="e.g. 200"></label>
+          </div>
+          <button class="button button-outline" type="submit" data-i18n="cropButton">Suggest a crop <span aria-hidden="true">→</span></button>
+          <div id="crop-result" class="tool-result" aria-live="polite"></div>
+          <p class="form-footnote" data-i18n="cropLimit">Dataset suggestion only—not a substitute for soil testing or local agronomy advice.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="brand footer-brand"><span class="brand-mark" aria-hidden="true">A</span> AgriSahay</span>
+    <p data-i18n="footer">Made to help farmers take the next step with more confidence. Always confirm scheme details with official sources.</p>
+  </footer>
+  <script src="/app.js" defer></script>
+</body>
+</html>
